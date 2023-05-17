@@ -1,0 +1,24 @@
+uuid: 075eb308-3531-4a73-9f11-1149882a5461
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.users_block
+  module:
+    - views
+  theme:
+    - olivero
+id: views_block__users_block_block_1
+theme: olivero
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:users_block-block_1'
+settings:
+  id: 'views_block:users_block-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

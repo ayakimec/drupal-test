@@ -1,0 +1,14 @@
+uuid: 1df0b9f4-9105-46f5-aa39-a28d8e771e3b
+langcode: en
+status: true
+dependencies: {  }
+name: middle_small
+label: middle-small(134×134)
+effects:
+  baf01893-f08f-4c43-9cc5-7f594f0cae39:
+    uuid: baf01893-f08f-4c43-9cc5-7f594f0cae39
+    id: image_resize
+    weight: 2
+    data:
+      width: 134
+      height: 134
