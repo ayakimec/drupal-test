@@ -1,0 +1,20 @@
+uuid: c07933a2-0504-4c6e-8ae6-9a0b0e692a68
+langcode: en
+status: true
+dependencies:
+  theme:
+    - olivero
+id: tabs
+theme: olivero
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: visible
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

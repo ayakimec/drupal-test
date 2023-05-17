@@ -1,0 +1,8 @@
+uuid: 99856ea8-3c59-4f5a-97f9-ccdf66517294
+langcode: en
+status: true
+dependencies: {  }
+name: Authors
+vid: book_authors
+description: 'Book Authors'
+weight: 0
