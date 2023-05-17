@@ -1,0 +1,7 @@
+hellopage.hello_page:
+  path: '/hello-page'
+  defaults:
+    _controller: '\Drupal\hellopage\Controller\HelloPageController::content'
+    _title: 'Hello World!'
+  requirements:
+    _permission: 'access content'

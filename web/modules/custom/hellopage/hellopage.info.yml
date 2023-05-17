@@ -1,0 +1,5 @@
+name: HelloPage
+description: Custom module for Drupal 9-10
+type: module
+core_version_requirement: ^9.2 || ^10
+package: HelloPage
