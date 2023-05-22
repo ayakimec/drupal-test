@@ -1,0 +1,14 @@
+<?php
+
+  function task_95_theme($existing, $type, $theme, $path) {
+    return [
+      'hello_block' => [
+        'render element' => 'elements',
+        'template' => 'block--hello-block',
+        'base hook' => 'block',
+        'variables' => [
+          'body_text' => NULL
+        ]
+      ]
+    ];
+  }

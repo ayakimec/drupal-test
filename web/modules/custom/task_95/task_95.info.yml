@@ -1,0 +1,5 @@
+name: Task 95
+description: Custom module to create Hello Block
+type: module
+core_version_requirement: ^9.2 || ^10
+package: custom
