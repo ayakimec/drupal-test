@@ -1,0 +1,16 @@
+<div{{ attributes }}>
+  <!-- body -->
+  <p>5 Last Nodes:</p>
+  <ul>
+    {% for item in titles %}
+        <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+
+  <ul>
+    {% for item in date %}
+        <li>{{ item|date("m/d/Y") }}</li>
+    {% endfor %}
+  </ul>
+
+</div>
