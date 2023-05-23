@@ -1,0 +1,7 @@
+task_27.nodes_page:
+  path: '/nodes-list-page'
+  defaults:
+    _controller: '\Drupal\task_27\Controller\NodesPageController::content'
+    _title: 'Nodes Page'
+  requirements:
+    _permission: 'access content'

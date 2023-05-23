@@ -1,0 +1,14 @@
+<div>
+
+  <h3>5 {{ 'Last Nodes'|trans }}:</h3>
+
+  <ol>
+    {% for item in nodes %}
+        <li>
+          <p>{{ item.title }}</p>
+          <p>{{ item.created|date("m/d/Y H:i") }}</p>
+        </li>
+    {% endfor %}
+  </ol>
+
+</div>
