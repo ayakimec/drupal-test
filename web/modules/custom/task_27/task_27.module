@@ -7,8 +7,7 @@
         'template' => 'block--task-27-block',
         'base hook' => 'block',
         'variables' => [
-          'titles' => [],
-          'date' => []
+          'nodes'=> []
         ]
       ]
     ];

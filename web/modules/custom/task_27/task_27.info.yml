@@ -1,5 +1,5 @@
 name: Task 27
 description: Custom module to create page with node list
 type: module
-core_version_requirement: ^9.2 || ^10
+core_version_requirement: ^9 || ^10
 package: custom

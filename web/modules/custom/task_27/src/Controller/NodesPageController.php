@@ -1,48 +1,42 @@
 <?php
- 
+
 /**
  * @file
  * Contains \Drupal\task_27\Controller\NodesPageController.
  */
- 
+
 namespace Drupal\task_27\Controller;
- 
+
 /**
- * Provides route responses for the HelloPage module.
+ * Provides route responses for the Task 27 module.
  */
 class NodesPageController {
- 
-  /**
-   * Returns a simple page.
-   *
-   * @return array
-   *   A simple renderable array.
-   */
-  public function content() {
 
-    $list = getNodes();
+	/**
+	 * Returns a simple page.
+	 *
+	 * @return array
+	 *   A simple renderable array.
+	 */
+	public function content() {
 
-    foreach ( $list as $item) {
-      $titles[] = $item->title;
-      $date[] = $item->created;
-    }
+		$list = $this->getNodes();
 
-    return [
-      '#theme' => 'task_27_block',
-      '#titles' => $titles,
-      '#date' => $date
-    ];
-  }
- 
-}
+		return [ 
+			'#theme' => 'task_27_block',
+			'#nodes' => $list
+		];
+	}
 
-function getNodes() {
-  $nodes = \Drupal::database()
-  ->select('node_field_data', 'n')
-  ->fields('n')
-  ->range(0, 5) // <--
-  ->execute()
-  ->fetchAll();
+	function getNodes() {
+		$nodes = \Drupal::database()
+			->select( 'node_field_data', 'n' )
+			->fields( 'n' )
+			->condition( 'status', 1 )
+			->range( 0, 5 )
+			->execute()
+			->fetchAll();
 
-  return $nodes;
+		return $nodes;
+	}
 }
