@@ -1,0 +1,7 @@
+task_28.blocks_page:
+  path: '/blocks-page/{node}'
+  defaults:
+    _controller: '\Drupal\task_28\Controller\BlocksPageController::content'
+    _title: 'Blocks Page'
+  requirements:
+    _permission: 'access content'
