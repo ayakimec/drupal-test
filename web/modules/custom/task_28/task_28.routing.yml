@@ -1,5 +1,5 @@
 task_28.blocks_page:
-  path: '/blocks-page/{node}'
+  path: '/blocks-page/{count}'
   defaults:
     _controller: '\Drupal\task_28\Controller\BlocksPageController::content'
     _title: 'Blocks Page'

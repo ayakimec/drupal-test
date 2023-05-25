@@ -18,14 +18,13 @@ class BlocksPageController {
 	 * @return array
 	 *   A simple renderable array.
 	 */
-	public function content() {
+	public function content( $count ) {
 		$result = $this->getRandomBlock();
-		$count = $this->getUriCount();
 		$data = array_fill( 0, $count, $result );
 
 		return [ 
 			'#theme'  => 'task_28_block',
-			'#blocks' => $data
+			'#blocks' => $data,
 		];
 	}
 
@@ -34,13 +33,5 @@ class BlocksPageController {
 		$render = \Drupal::entityTypeManager()->getViewBuilder( 'block' )->view( $block );
 
 		return $render;
-	}
-
-	function getUriCount() {
-		$current_uri = \Drupal::request()->getRequestUri();
-		$uri = explode( '/', $current_uri );
-		$count = (int) $uri[2];
-
-		return $count;
 	}
 }
