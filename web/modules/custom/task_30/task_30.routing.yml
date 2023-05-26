@@ -1,0 +1,8 @@
+task_30.check_credentials:
+  path: '/check-credentials'
+  defaults:
+    _controller: '\Drupal\task_30\Controller\AuthPageController::content'
+    _title: 'Auth Page'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\task_30\Controller\AuthPageController::access'

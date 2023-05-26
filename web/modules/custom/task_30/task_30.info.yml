@@ -1,0 +1,5 @@
+name: Task 30
+description: Custom module to create page for authentificated users
+type: module
+core_version_requirement: ^9 || ^10
+package: custom
