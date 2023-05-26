@@ -1,0 +1,5 @@
+name: Task 28
+description: Custom module to create page with blocks
+type: module
+core_version_requirement: ^9 || ^10
+package: custom
