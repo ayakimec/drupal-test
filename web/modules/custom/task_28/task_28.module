@@ -1,0 +1,14 @@
+<?php
+
+  function task_28_theme($existing, $type, $theme, $path) {
+    return [
+      'task_28_block' => [
+        'render element' => 'elements',
+        'template' => 'block--task-28-block',
+        'base hook' => 'block',
+        'variables' => [
+          'blocks'=> []
+        ]
+      ]
+    ];
+  }
