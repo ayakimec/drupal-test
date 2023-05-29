@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_entity_presave().
+ */
+
+function task_93_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  $config = \Drupal::config('task_93.admin_settings');
+  $settings_name = $config->get('task_93');
+  $title = $entity->get('title')->value;
+
+  if ($entity->getEntityTypeId() == 'node') {
+    $entity->set('title', $title . ' - ' . $settings_name);
+  }
+}

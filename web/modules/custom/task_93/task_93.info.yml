@@ -1,0 +1,6 @@
+name: Task 93
+description: Custom configuration form
+type: module
+configure: task_93.admin_settings
+core_version_requirement: ^9.2 || ^10
+package: custom
