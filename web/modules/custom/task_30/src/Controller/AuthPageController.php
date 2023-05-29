@@ -31,20 +31,20 @@ class AuthPageController {
     $current_user = \Drupal::currentUser();
     $roles = $current_user->getRoles();
     $manager = FALSE;
-    $even = FALSE;
+    $is_even = FALSE;
 
     $currentTime = new DrupalDateTime();
     $currentMinute = $currentTime->format('i');
 
     if (((int) $currentMinute % 2) === 0) {
-      $even = TRUE;
+      $is_even = TRUE;
     }
 
-    if ($even && in_array('manager', $roles) && in_array('authenticated', $roles)) {
+    if ($is_even && in_array('manager', $roles) && in_array('authenticated', $roles)) {
       $manager = TRUE;
     }
 
-    if (!$even && !in_array('manager', $roles) && in_array('authenticated', $roles)) {
+    if (!$is_even && !in_array('manager', $roles) && in_array('authenticated', $roles)) {
       $manager = FALSE;
     }
 
