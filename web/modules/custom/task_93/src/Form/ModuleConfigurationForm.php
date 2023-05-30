@@ -28,18 +28,17 @@ class ModuleConfigurationForm extends ConfigFormBase {
     ];
   }
 
-
-    /**
+  /**
    * The entity service.
    *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface; $entityTypeManager
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
   /**
-   * Constructs a EntityTypeManagerInterface object
+   * Constructs a EntityTypeManagerInterface object.
    *
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface; $entity_type_manager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The module handler service.
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
