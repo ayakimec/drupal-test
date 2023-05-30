@@ -59,11 +59,11 @@ class ModuleConfigurationForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('task_93.admin_settings');
-    $vid = 'Country';
+    $vid = 'country';
     $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($vid);
 
     foreach ($terms as $term) {
-      $countries[$term->name] = $term->name;
+      $countries[$term->tid] = $term->name;
     }
 
     $form['task_93'] = [
@@ -72,7 +72,7 @@ class ModuleConfigurationForm extends ConfigFormBase {
       '#empty_option' => $this->t('--- Select Country ---'),
       '#empty_value' => '',
       '#default_value' => $config->get('task_93'),
-      '#options' => $countries
+      '#options' => $countries,
     ];
     return parent::buildForm($form, $form_state);
   }
