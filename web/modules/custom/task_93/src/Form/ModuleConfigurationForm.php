@@ -33,20 +33,24 @@ class ModuleConfigurationForm extends ConfigFormBase {
    * The entity service.
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   * 
-   * @var \Drupal\Core\State\StateInterface
    */
   protected $entityTypeManager;
 
-	protected $stateInterface;
+
+  /**
+   * The state service.
+   *
+   * @var \Drupal\Core\State\StateInterface
+   */
+  protected $stateInterface;
 
   /**
    * Constructs a EntityTypeManagerInterface object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The module handler service.
-   * 
    * @param \Drupal\Core\State\StateInterface $state_interface
+   *   The module handler service.
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager, StateInterface $state_interface) {
     $this->entityTypeManager = $entity_type_manager;
@@ -89,7 +93,7 @@ class ModuleConfigurationForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->stateInterface->set('country_name',$form_state->getValue('country_name'));
+    $this->stateInterface->set('country_name', $form_state->getValue('country_name'));
 
     parent::submitForm($form, $form_state);
   }
