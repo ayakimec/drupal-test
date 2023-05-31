@@ -1,0 +1,7 @@
+task_93.config_form:
+  path: '/admin/config/task_93'
+  defaults:
+    _form: '\Drupal\task_93\Form\ModuleConfigurationForm'
+    _title: 'Task-93 configuration screen'
+  requirements:
+    _permission: 'administer site configuration'
