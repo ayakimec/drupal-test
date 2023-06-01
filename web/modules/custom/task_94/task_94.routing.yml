@@ -1,0 +1,7 @@
+task_94.custom_block_js:
+  path: '/custom-block-js'
+  defaults:
+    _title: 'Task-94'
+    _controller: '\Drupal\task_94\Controller\CustomJsBlockController::content'
+  requirements:
+    _permission: 'access content'

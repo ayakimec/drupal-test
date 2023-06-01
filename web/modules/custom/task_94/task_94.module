@@ -1,0 +1,13 @@
+<?php
+
+  function task_94_theme($existing, $type, $theme, $path) {
+    return [
+      'task_94_block' => [
+        'template' => 'block--task-94-block',
+        'variables' => [
+          'body_text' => NULL,
+          'date' => NULL
+        ]
+      ]
+    ];
+  }
