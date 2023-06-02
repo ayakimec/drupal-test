@@ -24,9 +24,7 @@ class CustomJsBlock extends BlockBase {
     return [
       '#theme' => 'task_94_block',
       '#date' => [
-        '#prefix' => '<div class="date"><strong>',
-        '#markup' => $date,
-        '#suffix' => '</strong></div>',
+        '#markup' => $date
       ]
     ];
   }
