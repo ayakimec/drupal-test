@@ -3,9 +3,7 @@
 namespace Drupal\task_94\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\DependencyInjection\ClassResolverInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
  * Provides a 'Custom Block with Js' block.
@@ -15,50 +13,32 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *  admin_label = @Translation("CustomJsBlock"),
  * )
  */
-class CustomJsBlock extends BlockBase implements ContainerFactoryPluginInterface {
-
-  /**
-   * Class Resolver service.
-   *
-   * @var \Drupal\Core\DependencyInjection\ClassResolverInterface
-   */
-  protected $classResolver;
-
-  /**
-   * Constructs a new ControllerBlock object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param string $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\Core\DependencyInjection\ClassResolverInterface $class_resolver
-   *   The class resolver service.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ClassResolverInterface $class_resolver) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->classResolver = $class_resolver;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('class_resolver')
-    );
-  }
+class CustomJsBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $controller = $this->classResolver->getInstanceFromDefinition('\Drupal\task_94\Controller\CustomJsBlockController');
-    return $controller->content();
+    $date = $this->getDate();
+
+    return [
+      '#theme' => 'task_94_block',
+      '#date' => [
+        '#prefix' => '<div class="date"><strong>',
+        '#markup' => $date,
+        '#suffix' => '</strong></div>',
+      ]
+    ];
+  }
+
+  /**
+   * Returns date.
+   */
+  public function getDate() {
+    $current_time = new DrupalDateTime();
+    $date = $current_time->format('d/m/Y');
+
+    return $date;
   }
 
 }

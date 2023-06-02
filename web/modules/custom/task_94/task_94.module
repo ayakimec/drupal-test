@@ -5,7 +5,6 @@
       'task_94_block' => [
         'template' => 'block--task-94-block',
         'variables' => [
-          'body_text' => NULL,
           'date' => NULL
         ]
       ]
