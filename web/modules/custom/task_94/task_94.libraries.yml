@@ -1,0 +1,4 @@
+custom_script:
+  version: 1.x
+  js:
+    js/custom.js: {}

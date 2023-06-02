@@ -1,0 +1,5 @@
+name: Task 94
+description: Custom block with js
+type: module
+core_version_requirement: ^9.2 || ^10
+package: custom
