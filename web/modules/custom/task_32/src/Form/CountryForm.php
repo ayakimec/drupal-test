@@ -123,7 +123,7 @@ class CountryForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->stateInterface->set('country_name', $form_state->getValue('country_name'));
-      $this->stateInterface->set('city_name', $form_state->getValue('city_name'));
+        $this->stateInterface->set('city_name', $form_state->getValue('city_name'));
 
     $country_name = $this->stateInterface->get('country_name');
     $city_name = $this->stateInterface->get('city_name');
