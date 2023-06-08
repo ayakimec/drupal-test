@@ -1,0 +1,7 @@
+task_31.contact_form:
+  path: '/contacts'
+  defaults:
+    _form: '\Drupal\task_31\Form\ContactForm'
+    _title: 'Task-31'
+  requirements:
+    _permission: 'access content'
