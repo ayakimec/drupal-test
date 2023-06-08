@@ -25,6 +25,7 @@
 
 /web/sites/default/services\.yml
 /web/config/local_dev
+/web/sites/default/files/*
 
 # Front-end
 node_modules
