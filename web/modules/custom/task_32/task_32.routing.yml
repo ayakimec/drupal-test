@@ -1,0 +1,7 @@
+task_32.country_form:
+  path: '/country-form'
+  defaults:
+    _form: '\Drupal\task_32\Form\CountryForm'
+    _title: 'Task-32'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,5 @@
+name: Task 32
+description: Country form
+type: module
+core_version_requirement: ^9.2 || ^10
+package: custom

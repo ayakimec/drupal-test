@@ -12,6 +12,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:domaalex/pre-commit-linter.git"
         }
     ],
     "require": {
@@ -24,6 +28,14 @@
         "drupal/module_filter": "^3.4",
         "drupal/views_field_view": "^1.0@beta",
         "drush/drush": "^11.5"
+    },
+    "scripts-dev": {
+        "post-install-cmd": [
+            "sh ./vendor/adomasevich/pre-commit-linter/scripts/setup.sh"
+        ]
+    },
+    "require-dev": {
+        "adomasevich/pre-commit-linter": "dev-master"
     },
     "conflict": {
         "drupal/drupal": "*"
