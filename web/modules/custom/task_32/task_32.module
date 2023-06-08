@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_alter_form().
+ */
+
+ use \Drupal\Core\Form\FormStateInterface;
+
+function task_32_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'country_form') {
+    $form['phone'] = [
+      '#type' => 'tel',
+      '#title' => 'Phone:',
+      '#placeholder' => t('Enter your phone number'),
+    ];
+  }
+}
