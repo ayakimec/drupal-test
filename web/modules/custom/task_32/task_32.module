@@ -12,4 +12,20 @@ function task_32_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       '#title' => 'Phone:',
       '#placeholder' => t('Enter your phone number'),
     ];
+
+    if($form_id == 'country_form') {
+      $form['#validate'][] = 'mobile_phone_validation';
+    }
+}
+
+function mobile_phone_validation($form, &$form_state) {
+  $phone = $form_state->getValue('phone');
+  $regex = '/[+]375?(25|29|33|44)[0-9]{7}/';
+  $messenger = \Drupal::messenger();
+
+  if (preg_match($regex, $phone)) {
+    $messenger->addMessage(t('Phone number is valid. The settings have been successfully saved'));
+  } else {
+    $form_state->setErrorByName('phone', t('Mobile is invalid. Please enter a valid mobile number e.g +375294563434.'));
+  }
 }
