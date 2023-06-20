@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * Implements birthday cron.
+ */
+
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\user\Entity\User;
+
+function task_70_cron() {
+  user_birthday_emails();
+}
+
+function user_birthday_emails() {
+  $send_mail = new \Drupal\Core\Mail\Plugin\Mail\PhpMail();
+  $users = get_users();
+
+  if(count($users) > 0) {
+    foreach ($users as $user) {
+      $email = $user->get('mail')->value;
+      $name = $user->get('name')->value;
+      
+      $message_email = email_template($email, $name);
+
+      $send_mail->mail($message_email);
+      \Drupal::logger('userinfo')->notice('Birthday mail sent to '.$name);
+    }
+  }
+}
+
+function get_users() {
+  $current_date = new DrupalDateTime('now');
+  $month_day = $current_date->format('m-d');
+
+  $query = \Drupal::entityQuery('user')
+    ->condition('status', 1)
+    ->condition('field_user_birthday', '%' . $month_day . '%', 'LIKE');
+  $uids = $query->execute();
+
+  return User::loadMultiple($uids);
+}
+
+function email_template($user_mail, $user_name) {
+  $from = 'sitename@example.com';
+  $to = $user_mail;
+  $message['headers'] = array(
+      'content-type' => 'text/html',
+      'MIME-Version' => '1.0',
+      'reply-to' => $from,
+      'from' => 'Site Admin <'.$from.'>'
+  );
+  
+  $message['to'] = $to;
+  $message['subject'] = "Happy Birthday ".$user_name."!!!";
+
+  $message['body'] = 'Dear '.$user_name.',
+  <br><br>
+  We value your special day just as much as we value you. On your birthday, we send you our warmest and most heartfelt wishes..
+  <br><br>
+  Regards,<br>
+  Site Admin';
+
+  return $message;
+}
