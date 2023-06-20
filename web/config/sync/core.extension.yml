@@ -43,9 +43,9 @@ module:
   task_27: 0
   task_28: 0
   task_30: 0
-  task_32: 0
   task_31: 0
-  task_93: 0
+  task_32: 0
+  task_70: 0
   task_94: 0
   task_95: 0
   taxonomy: 0
@@ -60,4 +60,6 @@ module:
 theme:
   olivero: 0
   claro: 0
+  bootstrap: 0
+  customtheme: 0
 profile: standard
