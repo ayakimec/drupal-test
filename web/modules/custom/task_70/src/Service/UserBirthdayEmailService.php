@@ -3,7 +3,6 @@
 namespace Drupal\task_70\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Mail\Plugin\Mail\PhpMail;
 use Psr\Log\LoggerInterface;
@@ -39,17 +38,7 @@ class UserBirthdayEmailService {
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger) {
     $this->entityTypeManager = $entity_type_manager;
-    $this->logger = $logger->get('userinfo');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('entity_type.manager'),
-      $container->get('logger.factory')
-    );
+    $this->logger = $logger;
   }
 
   /**
@@ -67,7 +56,7 @@ class UserBirthdayEmailService {
         $message_email = $this->emailTemplate($email, $name);
 
         $send_mail->mail($message_email);
-        $this->logger->get('action')->notice('Birthday mail sent to ' . $name);
+        $this->logger->info('Birthday mail sent to ' . $name);
       }
     }
   }

@@ -4,3 +4,4 @@ services:
     class: Drupal\task_70\Service\UserBirthdayEmailService
     arguments:
       - '@entity_type.manager'
+      - '@logger.channel.default'
