@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Add new terms to existing taxonomy vocabulary.
+ */
+function task_39_update_9501() {
+  $vid = 'countries';
+  $terms = [
+    'Netherlands',
+    'New Zeland',
+    'Japan',
+  ];
+
+  foreach ($terms as $name) {
+    $term = \Drupal\taxonomy\Entity\Term::create([
+      'name' => $name,
+     'vid' => $vid,
+    ]);
+
+    $term->save();
+  }
+}
