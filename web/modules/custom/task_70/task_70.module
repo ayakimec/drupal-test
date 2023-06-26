@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements birthday cron.
+ */
+
+function task_70_cron() {
+  /** @var $user_birthday_email_service \Drupal\task_70\Service\UserBirthdayEmailService */
+  $user_birthday_email_service = \Drupal::service('task_70.user_birthday_email_service');
+  $user_birthday_email_service->userBirthdayEmails();
+}
