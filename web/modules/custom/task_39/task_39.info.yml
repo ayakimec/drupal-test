@@ -1,0 +1,5 @@
+name: Task 39
+description: Module updating taxonomy
+type: module
+core_version_requirement: ^9.2 || ^10
+package: custom
