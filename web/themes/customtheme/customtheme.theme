@@ -6,3 +6,16 @@
  *
  * Place your custom PHP code in this file.
  */
+
+ function customtheme_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  $id = $node->id();
+  $class = 'night';
+
+  if ($id % 2 == 0) {
+    $class = 'day';
+  }
+
+  $variables['attributes']['class'][] = $class;
+ }
