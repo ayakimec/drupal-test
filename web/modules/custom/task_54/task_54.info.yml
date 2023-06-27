@@ -1,0 +1,5 @@
+name: Task 54
+description: Module add js behaviour
+type: module
+core_version_requirement: ^9.2 || ^10
+package: custom

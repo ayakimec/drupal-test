@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Add custom js library.
+ */
+
+function task_54_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'task_54/custom-js';
+}
