@@ -1,0 +1,7 @@
+name: Task 55
+description: Adds a custom button ajax block.
+type: module
+core_version_requirement: ^9.2 || ^10
+package: custom
+dependencies:
+  - block

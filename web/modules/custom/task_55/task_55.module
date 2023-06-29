@@ -1,0 +1,9 @@
+<?php
+
+function task_55_theme($existing, $type, $theme, $path) {
+  return [
+    'task_55_block' => [
+      'template' => 'block--alert-button-block',
+    ]
+  ];
+}
