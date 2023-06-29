@@ -1,0 +1,7 @@
+task_55.ajax_button:
+  path: '/ajax-button'
+  defaults:
+    _title: 'Task-55'
+    _controller: '\Drupal\task_55\Controller\AjaxButtonController::ajaxButton'
+  requirements:
+    _permission: 'access content'
